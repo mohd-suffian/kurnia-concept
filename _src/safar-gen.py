@@ -45,7 +45,7 @@ def header(key):
     on = lambda k: 'on' if k == key or (k == 'shop' and key.startswith('p-')) else ''
     links = ''.join(f'<a class="{on(k)}" href="{u(k)}">{n}</a>' for k, n in nav())
     return f'''<div class="concept">{t('Concept prototype by KL Tech for Safar Gifts by Kurnia. Not a live shop: no orders are taken and no payment is collected.', 'نموذج تجريبي من KL Tech لـ سفر للهدايا من كورنيا. ليس متجرًا فعليًا: لا تُستلم طلبات ولا تُحصّل مدفوعات.')}</div>
-<div class="top"><div class="wrap"><span>{t('Easy to carry · Ready to gift · Packs of 10 and 20', 'سهلة الحمل · جاهزة للإهداء · عبوات من 10 و20')}</span><a href="{u(key, other)}" lang="{other}">{'العربية' if L == 'en' else 'English'}</a></div></div>
+<div class="top"><div class="wrap"><span>{t('Easy to carry · Ready to gift · Packs of 10 and 20', 'سهلة الحمل · جاهزة للإهداء · عبوات من 10 و20')}</span><span style="display:flex;gap:18px"><a href="{rel('../')}">{t('Umrah packages by Kurnia', 'باقات العمرة من كورنيا')} →</a><a href="{u(key, other)}" lang="{other}">{'العربية' if L == 'en' else 'English'}</a></span></div></div>
 <header class="hdr"><div class="wrap"><a class="brand" href="{u('home')}"><img src="{a('safar-logo.svg')}" alt="Safar Gifts by Kurnia Tour and Travel" width="230" height="62"></a>
 <nav class="nav" aria-label="{t('Main', 'الرئيسية')}">{links}</nav>
 <div class="row" style="gap:8px"><a class="cartlink" href="{u('cart')}" aria-label="{t('Cart', 'السلة')}">{BAG}<b data-count style="display:none">0</b></a>
@@ -57,7 +57,7 @@ def footer():
 <div><img src="{a('safar-logo-reverse.svg')}" alt="Safar Gifts by Kurnia Tour and Travel" style="height:58px;width:auto;margin-bottom:10px"><p style="font-family:Lora,serif;font-style:italic;color:#F3E6C8;margin-bottom:6px">Buah Tangan dari Tanah Suci</p><p>{t('Gift packs for pilgrims, by the team behind Kurnia Tour & Travel.', 'هدايا للحجاج والمعتمرين، من فريق كورنيا للسفر والسياحة.')}</p></div>
 <div><b>{t('Shop', 'المتجر')}</b>{''.join(f'<a href="{u("p-" + p["id"])}">{CAT["currency"]} {p["price"]} · {nm(p)}</a>' for p in P)}</div>
 <div><b>{t('Help', 'المساعدة')}</b><a href="{u('how')}">{t('How it works', 'كيف نعمل')}</a><a href="{u('faq')}">{t('FAQ', 'الأسئلة الشائعة')}</a><a href="{u('bulk')}">{t('Bulk and agency orders', 'طلبات الجملة والوكالات')}</a></div>
-<div><b>Kurnia Tour &amp; Travel</b><a href="{rel('../')}">{t('Kurnia Umrah packages', 'باقات العمرة من كورنيا')}</a><span>Makkah · Madinah · Melaka · Cianjur</span></div>
+<div><b>Kurnia Tour &amp; Travel</b><a href="{rel('../')}">{t('Kurnia Umrah packages', 'باقات العمرة من كورنيا')}</a><a href="{rel('../hadiah-umrah/')}">{t('Safar Gifts on the Kurnia site', 'سفر للهدايا على موقع كورنيا')}</a><span>Makkah · Madinah · Melaka · Cianjur</span></div><div><b>{t('Scan to share', 'امسح للمشاركة')}</b><img src="{a('safar-gifts-qr.png')}" alt="{t('QR code to this shop', 'رمز QR لهذا المتجر')}" style="width:120px;height:120px;border-radius:10px;margin-top:4px"></div>
 </div><div class="base"><span>{t('All contents and prices are initial concepts, subject to availability and compliance.', 'جميع المحتويات والأسعار مبدئية، وتخضع للتوفر والامتثال للأنظمة.')}</span><span>{t('Concept by KL Tech', 'تصميم مبدئي من KL Tech')}</span></div></div></footer><div class="toast" role="status"></div><script src="{a('safar.js')}"></script></body></html>'''
 
 def checks(p):
