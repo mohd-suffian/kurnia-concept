@@ -54,7 +54,7 @@ def header(key):
 
 def footer():
     return f'''</main><footer class="ftr"><div class="wrap"><div class="cols">
-<div><img src="{a('safar-logo-reverse.svg')}" alt="Safar Gifts by Kurnia Tour and Travel" style="height:58px;width:auto;margin-bottom:10px"><p>{t('Gift packs for pilgrims, by the team behind Kurnia Tour & Travel.', 'هدايا للحجاج والمعتمرين، من فريق كورنيا للسفر والسياحة.')}</p></div>
+<div><img src="{a('safar-logo-reverse.svg')}" alt="Safar Gifts by Kurnia Tour and Travel" style="height:58px;width:auto;margin-bottom:10px"><p style="font-family:Lora,serif;font-style:italic;color:#F3E6C8;margin-bottom:6px">Buah Tangan dari Tanah Suci</p><p>{t('Gift packs for pilgrims, by the team behind Kurnia Tour & Travel.', 'هدايا للحجاج والمعتمرين، من فريق كورنيا للسفر والسياحة.')}</p></div>
 <div><b>{t('Shop', 'المتجر')}</b>{''.join(f'<a href="{u("p-" + p["id"])}">{CAT["currency"]} {p["price"]} · {nm(p)}</a>' for p in P)}</div>
 <div><b>{t('Help', 'المساعدة')}</b><a href="{u('how')}">{t('How it works', 'كيف نعمل')}</a><a href="{u('faq')}">{t('FAQ', 'الأسئلة الشائعة')}</a><a href="{u('bulk')}">{t('Bulk and agency orders', 'طلبات الجملة والوكالات')}</a></div>
 <div><b>Kurnia Tour &amp; Travel</b><a href="{rel('../')}">{t('Kurnia Umrah packages', 'باقات العمرة من كورنيا')}</a><span>Makkah · Madinah · Melaka · Cianjur</span></div>
@@ -83,7 +83,7 @@ def p_home():
     body = f'''<section class="hero"><div class="wrap"><div style="display:flex;flex-direction:column;gap:18px">
 <span class="eyebrow">{t('Umrah & Hajj gift packs', 'هدايا العمرة والحج')}</span>
 <h1>{t('Meaningful Gifts from Your Sacred Journey', 'هدايا ذات معنى من رحلتك المباركة')}</h1>
-<p class="tag-line">{t('Easy to carry · Ready to gift', 'سهلة الحمل · جاهزة للإهداء')}</p>
+<p class="tag-line">Buah Tangan dari Tanah Suci</p><p class="muted" style="font-weight:600;margin-top:-10px">{t('Easy to carry · Ready to gift', 'سهلة الحمل · جاهزة للإهداء')}</p>
 <p class="lead">{t('Compact packs of Zamzam, dates and sweets, sealed and boxed for the people waiting at home. Order in tens or twenties, before, during or after your journey, and collect at your hotel.', 'عبوات صغيرة من زمزم والتمر والحلويات، مختومة ومغلفة لأحبتك في الوطن. اطلب بالعشرات أو العشرينات، قبل رحلتك أو أثناءها أو بعدها، واستلمها في فندقك.')}</p>
 <div class="row"><a class="btn btn-em" href="{u('shop')}">{t('Shop Gift Packs', 'تسوق الباقات')}</a><a class="btn btn-line" href="{u('build')}">{t('Build Your Pack', 'صمّم باقتك')}</a></div>
 <div class="ticks"><span>✓ {t('From SAR 3 per gift', 'من 3 ريالات للهدية')}</span><span>✓ {t('Fits in hand luggage', 'تناسب حقيبة اليد')}</span><span>✓ {t('Hotel drop-off', 'التوصيل للفندق')}</span></div>
