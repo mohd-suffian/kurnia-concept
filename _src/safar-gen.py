@@ -129,13 +129,14 @@ def p_product(p):
 
 def p_build():
     budgets = ''.join(f'<option value="{p["price"]}" {"selected" if p["price"] == 10 else ""}>{CAT["currency"]} {p["price"]}</option>' for p in P)
-    items = ''.join(f'<label class="opt"><input type="checkbox" name="bitem" value="{k}" {"checked" if k in ("zamzam", "dates") else ""}> {v}</label>' for k, v in ITEMS().items())
+    imgk = {'zamzam': 'zamzam', 'dates': 'dates', 'sweets': 'sweets', 'tasbih': 'tasbih', 'dua': 'dua-card'}
+    items = ''.join(f'<label class="opt item"><input type="checkbox" name="bitem" value="{k}" {"checked" if k in ("zamzam", "dates") else ""}><img src="{a("item-" + imgk[k] + ".png")}" alt="" loading="lazy">{v}</label>' for k, v in ITEMS().items())
     cols = [('ivory', t('Ivory', 'عاجي')), ('sand', t('Sand', 'رملي')), ('emerald', t('Emerald', 'زمردي')), ('burgundy', t('Burgundy', 'عنابي'))]
     colhtml = ''.join(f'<label><input type="radio" name="colour" value="{k}" {"checked" if k == "emerald" else ""}>{n}</label>' for k, n in cols)
     locs = [t('Hotel drop-off, Makkah', 'توصيل للفندق، مكة'), t('Hotel drop-off, Madinah', 'توصيل للفندق، المدينة'), t('Collect from our counter', 'الاستلام من نقطة البيع'), t('Deliver before departure (home country)', 'التوصيل قبل السفر (بلدك)')]
     body = phero(t('Build Your Pack', 'صمّم باقتك'), t('Tell us your budget and what each gift should hold. We match you to the right pack and work out the total.', 'أخبرنا بميزانيتك وما تريد في كل هدية، ونختار لك الباقة المناسبة ونحسب الإجمالي.')) + f'''<section style="padding-top:28px"><div class="wrap cartgrid" data-build><form class="panel" onsubmit="return false">
 <div class="grid g2"><label class="f">{t('Budget per gift', 'الميزانية للهدية')}<select name="budget">{budgets}</select></label><label class="f">{t('Number of recipients', 'عدد المستلمين')}<input name="recipients" type="number" min="1" max="1000" value="20"></label></div>
-<fieldset style="border:0;padding:0;margin:0"><legend class="eyebrow" style="margin-bottom:8px">{t('Each gift includes', 'تشمل كل هدية')}</legend><div class="grid g3" style="gap:4px">{items}</div></fieldset>
+<fieldset style="border:0;padding:0;margin:0"><legend class="eyebrow" style="margin-bottom:8px">{t('Each gift includes', 'تشمل كل هدية')}</legend><div class="itemgrid">{items}</div></fieldset>
 <div><span class="eyebrow">{t('Packaging colour', 'لون التغليف')}</span><div class="seg" style="grid-template-columns:repeat(4,1fr);margin-top:8px">{colhtml}</div></div>
 <label class="opt"><input type="checkbox" name="bsticker"> {t('Personalised sticker', 'ملصق مخصص')}</label><label class="f">{t('Sticker text', 'نص الملصق')}<input name="bstickerText" maxlength="40" placeholder="{t('From Makkah with Du’a', 'من مكة مع الدعاء')}"></label>
 <label class="f">{t('Delivery or collection', 'التوصيل أو الاستلام')}<select name="location">{''.join(f'<option>{x}</option>' for x in locs)}</select></label>
