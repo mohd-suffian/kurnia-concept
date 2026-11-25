@@ -1,0 +1,41 @@
+{
+  "_note": "Sample concept data. Edit prices, contents, sizes and weights here, then run gen.py. All values are initial concepts, subject to availability and compliance.",
+  "currency": "SAR",
+  "stickerPerUnit": 0.5,
+  "packSizes": [10, 20],
+  "customRange": [50, 1000],
+  "products": [
+    {
+      "id": "sar-3", "price": 3, "colour": "sand", "img": "sar3.jpg", "box": "sar3-box.jpg",
+      "size": [8, 6, 3], "weightG": 60, "items": ["zamzam", "dates"],
+      "name": {"en": "Basic Pack", "ar": "الباقة الأساسية"},
+      "packaging": {"en": "Compact kraft envelope pouch", "ar": "ظرف ورقي مدمج"},
+      "contents": {"en": ["Small sealed Zamzam portion*", "One or two dates"], "ar": ["عبوة زمزم صغيرة مختومة*", "تمرة أو تمرتان"]},
+      "blurb": {"en": "The simplest gift for a large circle: colleagues, neighbours, the whole surau.", "ar": "أبسط هدية لدائرة كبيرة: الزملاء والجيران والمصلّين."}
+    },
+    {
+      "id": "sar-5", "price": 5, "colour": "ivory", "img": "sar5.jpg", "box": "sar5-box.jpg",
+      "size": [9, 7, 3.5], "weightG": 110, "items": ["zamzam", "dates", "sweets"],
+      "name": {"en": "Essential Pack", "ar": "الباقة المميزة"},
+      "packaging": {"en": "Ivory folding box with gold band", "ar": "علبة عاجية قابلة للطي بشريط ذهبي"},
+      "contents": {"en": ["Sealed Zamzam portion*", "Dates", "One traditional sweet"], "ar": ["عبوة زمزم مختومة*", "تمر", "قطعة حلوى تقليدية"]},
+      "blurb": {"en": "A little more to open: Zamzam, dates and a sweet, in a box that looks gifted.", "ar": "هدية أجمل: زمزم وتمر وحلوى في علبة أنيقة."}
+    },
+    {
+      "id": "sar-10", "price": 10, "colour": "emerald", "img": "sar10.jpg", "box": "sar10-box.jpg",
+      "size": [11, 9, 4], "weightG": 220, "items": ["zamzam", "dates", "sweets", "tasbih", "dua"],
+      "name": {"en": "Complete Pack", "ar": "الباقة الكاملة"},
+      "packaging": {"en": "Premium emerald drawer box", "ar": "علبة درج زمردية فاخرة"},
+      "contents": {"en": ["Sealed Zamzam portion*", "Premium dates", "Traditional sweets", "Mini tasbih", "Dua card"], "ar": ["عبوة زمزم مختومة*", "تمر فاخر", "حلويات تقليدية", "مسبحة صغيرة", "بطاقة دعاء"]},
+      "blurb": {"en": "Everything in one box. The pack most families choose for close relatives.", "ar": "كل شيء في علبة واحدة. الخيار المفضل للأقارب."}
+    },
+    {
+      "id": "sar-20", "price": 20, "colour": "burgundy", "img": "sar20.jpg", "box": "sar20-box.jpg",
+      "size": [13, 10, 4.5], "weightG": 350, "items": ["zamzam", "dates", "sweets", "tasbih", "dua", "large-zamzam"],
+      "name": {"en": "Premium Pack", "ar": "الباقة الفاخرة"},
+      "packaging": {"en": "Burgundy presentation box", "ar": "علبة عرض عنابية"},
+      "contents": {"en": ["Larger Zamzam portion*", "Premium dates", "Assorted traditional sweets", "Premium mini tasbih", "Dua card"], "ar": ["عبوة زمزم أكبر*", "تمر فاخر", "تشكيلة حلويات تقليدية", "مسبحة صغيرة فاخرة", "بطاقة دعاء"]},
+      "blurb": {"en": "For parents, teachers and the people who made the journey possible.", "ar": "للوالدين والمعلمين ومن ساعدكم في هذه الرحلة."}
+    }
+  ]
+}
